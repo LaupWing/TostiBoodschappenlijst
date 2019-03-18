@@ -4,15 +4,81 @@
 }
 body{
     font-family: 'Fredoka One', cursive;
+    background: #86D8FD;
 }
 header{
     width: 100vw;
     height: 10vh;
-    background: orange;
+    background: #FFBF04;
+    color: white;
+}
+h1{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+img{
+    width: 180px;
+}
+button{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    width: 80px;
+    background: rgba(0,0,0,.3);
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    border: white solid 2px;
+    border-radius: 20px;
+    transition: .25s;
+    outline: none;
+}
+main{
+    margin-top: 5vh;
+    height: 70vh;
+    max-height: 550px; 
+    justify-content: space-around;
+}
+button:focus,
+button:hover{
+    color: black;
+    background: white;
+}
+/* Styling classes 
+--------------------*/
+.centering{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.spaceAround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.img-container{
+    border-radius: 50%;
+}
+#FullTosti{
+    animation: upDownAnim 3s infinite ease-out;
+}
+.tostiShadow{
+    background: rgba(0,0,0,.5);
+    width: 150px;
+    height: 20px;
+    border-radius: 50%;
+    animation: shadow 3s infinite ease-out;
 }
 
 /* Svg Styling 
 --------------------*/
+svg{
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
 #Container{
     fill:#d46a56;
 }
@@ -32,6 +98,26 @@ header{
     fill:#b05548;
 }
 
-svg{
-    width: 250px;
+@keyframes upDownAnim{
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(0,20px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+
+@keyframes shadow{
+    0%{
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.8);
+    }
 }
