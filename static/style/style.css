@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Fredoka One', cursive;
+}
+header{
+    width: 100vw;
+    height: 10vh;
+    background: orange;
+}
+
+/* Svg Styling 
+--------------------*/
+#Container{
+    fill:#d46a56;
+}
+#BroodKorst{
+    fill:#745542;
+}
+#InnerBrood{
+    fill:#f6e0c2;
+}
+#InnerBroodShadow{
+    fill:#c2b09a;
+}
+#BroodKorstShadow{
+    fill:#402e26;
+}
+#ContainerSHadow{
+    fill:#b05548;
+}
+
+svg{
+    width: 250px;
+}
