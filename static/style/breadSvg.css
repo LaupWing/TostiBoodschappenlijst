@@ -1,0 +1,66 @@
+#Container{
+    fill:#d46a56;
+}
+#ContainerSHadow{
+    fill:#b05548;
+}
+
+
+/* Bruin Brood */
+#BroodKorst.Bruin{
+    fill:#745542;
+}
+#InnerBrood.Bruin{
+    fill:#f6e0c2;
+}
+#InnerBroodShadow.Bruin{
+    fill:#c2b09a;
+}
+#BroodKorstShadow.Bruin{
+    fill:#402e26;
+}
+
+/* Wit Brood */
+#BroodKorst.Wit{
+    fill: #e9a340;
+}
+#InnerBrood.Wit{
+    fill: #efddaf;
+}
+#InnerBroodShadow.Wit{
+    fill: #baab8a;
+}
+#BroodKorstShadow.Wit{
+    fill: #b57a33;
+}
+
+/* Volkoren */
+#BroodKorst.Volkoren{
+    fill: #6e4010;
+}
+#InnerBrood.Volkoren{
+    fill: #b1732f;
+}
+#InnerBroodShadow.Volkoren{
+    fill: #633f1b;
+}
+#BroodKorstShadow.Volkoren{
+    fill: #3a2009;
+}
+
+/* Mais */
+#BroodKorst.Maïs{
+    fill: #ebb13a;
+}
+#InnerBrood.Maïs{
+    fill: #fdf6bd;
+}
+#InnerBroodShadow.Maïs{
+    fill: #ccc59a;
+}
+#BroodKorstShadow.Maïs{
+    fill: #b7852e;
+}
+
+
+

@@ -1,7 +1,10 @@
+@import "./breadSvg.css";
 *{
     margin: 0;
     padding: 0;
 }
+/* Global Coloring 
+--------------------*/
 body{
     font-family: 'Fredoka One', cursive;
     background: #86D8FD;
@@ -12,6 +15,10 @@ header{
     background: #FFBF04;
     color: white;
 }
+nav{
+    display: flex;
+    justify-content: space-between;
+}
 h1{
     text-align: center;
     font-size: 24px;
@@ -20,11 +27,14 @@ h1{
 img{
     width: 180px;
 }
+a,
 button{
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 10px;
-    width: 80px;
+    padding: 12px;
+    width: 120px;
     background: rgba(0,0,0,.3);
     font-family: 'Fredoka One', cursive;
     color: white;
@@ -32,20 +42,47 @@ button{
     border-radius: 20px;
     transition: .25s;
     outline: none;
+    margin: 40px auto;
+    display: block;
+}
+i{
+    color:white;
+    font-size: 30px;
 }
 main{
     margin-top: 5vh;
     height: 70vh;
-    max-height: 550px; 
+    max-height: 650px; 
     justify-content: space-around;
+}
+input[type="radio"]{
+    display: none;
+}
+form{
+    width: 100%;
+    height: 100%;
 }
 button:focus,
 button:hover{
     color: black;
     background: white;
 }
+h1,h2,h3{
+    color: white;
+}
+/* Globals Zonder Javascript Styling
+------------------ */
+main.zonderJS{
+    height: 85vh;
+}
 /* Styling classes 
 --------------------*/
+.none{
+    display: none !important;
+}
+.visible{
+    opacity: 1 !important;
+}
 .centering{
     display: flex;
     justify-content: center;
@@ -58,9 +95,19 @@ button:hover{
     align-items: center;
     flex-direction: column;
 }
+.info{
+    height: 10%;
+    text-align: center;
+}
+.info >h2{
+    font-size: 28px;
+}
 .img-container{
     border-radius: 50%;
 }
+
+/* Homepage Styling 
+--------------------*/
 #FullTosti{
     animation: upDownAnim 3s infinite ease-out;
 }
@@ -72,32 +119,67 @@ button:hover{
     animation: shadow 3s infinite ease-out;
 }
 
+/* Tosti Page 1 Styling 
+--------------------*/
+#keuzes{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+    margin: 10px;
+}
+#keuzes .broodSoort > label{
+    color: black;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    opacity: 0;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    transition: .25s;
+}
+.broodSoort{
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr;
+}
+.broodKeuze{
+    width: 80vw;
+}
+/* - Tosty Page 1 Zonder JS - */
+.broodKeuze.zonderJS{
+    height: 85%;
+}
+.broodKeuze.zonderJS > form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+.broodKeuze.zonderJS > form > .broodSoort{
+    width: 100%;
+    height: 80%;
+}
+.broodKeuze.zonderJS > form > .broodSoort > label{
+    background: rgba(0,0,0,.5);
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    color: rgba(255,255,255,.5);
+    transition: .25s;
+}
+.broodKeuze.zonderJS > form > .broodSoort > input[type="radio"]:checked + label{
+    background: black;
+    color: white;
+}
 /* Svg Styling 
 --------------------*/
 svg{
     width: 200px;
-    margin: 0 auto;
-    display: block;
 }
-#Container{
-    fill:#d46a56;
+svg > * {
+    transition: .25s;
 }
-#BroodKorst{
-    fill:#745542;
-}
-#InnerBrood{
-    fill:#f6e0c2;
-}
-#InnerBroodShadow{
-    fill:#c2b09a;
-}
-#BroodKorstShadow{
-    fill:#402e26;
-}
-#ContainerSHadow{
-    fill:#b05548;
-}
-
 @keyframes upDownAnim{
     0%{
         transform: translate(0,0);
