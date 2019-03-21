@@ -78,6 +78,7 @@ main.zonderJS{
 /* Styling classes 
 --------------------*/
 .none{
+    height: 0 !important; 
     display: none !important;
 }
 .visible{
@@ -161,6 +162,7 @@ main.zonderJS{
     height: 80%;
 }
 .broodKeuze.zonderJS > form > .broodSoort > label{
+    z-index: 9000;
     background: rgba(0,0,0,.5);
     border-radius: 10px;
     width: 100%;
@@ -171,6 +173,9 @@ main.zonderJS{
 .broodKeuze.zonderJS > form > .broodSoort > input[type="radio"]:checked + label{
     background: black;
     color: white;
+}
+button.zonderJS{
+    margin: 10px auto;
 }
 /* Svg Styling 
 --------------------*/

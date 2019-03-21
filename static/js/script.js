@@ -1,7 +1,17 @@
 let active = 0;
 function init(){
+    document.querySelector("main").classList.remove("zonderJS");
+    const js = document.querySelectorAll(".none");
+    js.forEach(x=>{
+        x.classList.remove("none")
+    })
+    const noJs = document.querySelectorAll(".zonderJS");
+    noJs.forEach(x=>{
+        x.classList.add("none")
+    })
     const allLabels = document.querySelectorAll("label");
     allLabels[0].classList.add("visible");
+    allLabels[0].click();
     setBreadColors("Bruin");
     const prev = document.querySelector("#prev");
     const next = document.querySelector("#next");
@@ -9,7 +19,8 @@ function init(){
         prev,
         next
     }
-    addEvents(obj)
+    console.log(noJs)
+    addEvents(obj);
 }
 
 function addEvents(obj){
@@ -17,7 +28,7 @@ function addEvents(obj){
     obj.prev.addEventListener("click", selection);
 }
 function selection(){
-    const allLabels = document.querySelectorAll("label");
+    const allLabels = document.querySelectorAll("#keuzes label");
     // if(this.id === "next"){
     //     active++
     //     allLabels.forEach(label=>label.classList.remove("visible"));
@@ -30,6 +41,7 @@ function selection(){
     //     console.log("FOOOOUT")
     // }
     console.log(allLabels.length)
+    console.log(active)
     if(this.id === "next" && active < (allLabels.length-1)){
         active++;
     }
@@ -71,5 +83,6 @@ function setBreadColors(value){
     //     value.classList.add(value)
     // });
 }
+
 // First initializing
 init();
