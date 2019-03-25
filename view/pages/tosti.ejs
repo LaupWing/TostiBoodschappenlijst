@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../partials/head %>
+<body class="centering">
+    <header class="centering">
+        <h1>Maak Uw Tosti</h1>
+    </header>
+    <% if(!settings.javascript) { %>
+        <% include ../partials/forms/jsNO/bread %>
+    <% } else if(settings.javascript){ %>
+        <% include ../partials/forms/jsYES/bread %>
+    <% } %>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

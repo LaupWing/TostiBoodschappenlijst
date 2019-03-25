@@ -1,15 +1,6 @@
-// import { constants } from "crypto";
-import {breadSVG} from './breadSVG.js';
-console.log("test")
-console.log(breadSVG)
 let active = 0;
 
 function init(){
-    const main = document.querySelector("main");
-    main.classList.remove("zonderJS");
-    removeElements(main)
-    main.insertAdjacentHTML('beforeend', breadSVG());
-
     // Zero State setting
     const allLabels = document.querySelectorAll("label");
     allLabels[0].classList.add("visible");
@@ -30,7 +21,6 @@ function removeElements(parent){
         parent.removeChild(parent.firstChild);
     }
 }
-
 
 function addEvents(obj){
     obj.next.addEventListener("click", selection);
@@ -72,15 +62,26 @@ function arrowSettings(){
 
 
 function setBreadColors(value){
-    const breadObj = {
-        innerBread : document.querySelector("#InnerBrood"),
-        innerBreadShadow : document.querySelector("#InnerBroodShadow"),
-        breadCrust : document.querySelector("#BroodKorst"),
-        breadCrustShadow : document.querySelector("#BroodKorstShadow")
-    }
-    Object.values(breadObj).forEach(el=>{
-        el.className = value
+    const array = [
+        document.querySelector("#InnerBrood"),
+        document.querySelector("#InnerBroodShadow"),
+        document.querySelector("#BroodKorst"),
+        document.querySelector("#BroodKorstShadow")
+    ]
+
+    array.forEach(item=>{
+        item.removeAttribute("class")
+        item.classList.add(value)
     });
+    // const breadObj = {
+    //     innerBread : document.querySelector("#InnerBrood"),
+    //     innerBreadShadow : document.querySelector("#InnerBroodShadow"),
+    //     breadCrust : document.querySelector("#BroodKorst"),
+    //     breadCrustShadow : document.querySelector("#BroodKorstShadow")
+    // }
+    // Object.values(breadObj).forEach(el=>{
+    //     el.className = value
+    // });
 }
 
 function checkQuerySelector(element){

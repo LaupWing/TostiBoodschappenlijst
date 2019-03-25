@@ -3,54 +3,66 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 5000;
+const session = require("express-session");
 const LocalStorage = require('node-localstorage').LocalStorage;
 const localStorage = new LocalStorage('./scratch');
 
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-app.use(express.static("static"));
 
-app.set("view engine", "ejs");
-app.set("views", "view");
+app
+    .use(bodyParser.urlencoded({extended:true}))
+    .use(bodyParser.json())
+    .use(express.static("static"))
+    .use(session({
+        secret: "TostiMeester",
+        cookie: {secure: false},
+        resave: false,
+        saveUninitialized: true
+    }))
+    .set("view engine", "ejs")
+    .set("views", "view");
 
-app.get("/", renderHome);
-app.get("/tosti1", renderStep1);
-app.get("/test/:id", renderTest);
-
-// De posts
-app.post("/tosti1post", tosti1POST);
-app.post("/testPost", testPost);
+app
+    .get("/", renderHome)
+    .get("/tosti", tostiPage)
+    .post("/add", addItem)
+    .post('/:id', jsCheck);
 
 
-function tosti1POST(req, res, next){
-    console.log(req.body)
-    console.log(req)
-    res.redirect(`/test/${req.body.brood}`);
-    // res.render("pages/tosti1");
-    // next();
+function jsCheck(req,res){
+    console.log(req.params.id)
+    if(req.params.id === "javascriptYES"){
+        req.session.settings =
+        {
+            javascript: true
+        }
+    }else{
+        req.session.settings =
+        {
+            javascript: false
+        }
+    }
+    res.redirect('/tosti')
 }
 
-console.log(bodyParser)
+
+function addItem(req,res){
+    const { body } = req;
+    req.session.settings.tosti = (req.session.settings.tosti || new Array())
+        .concat(Object.values(body))
+    res.redirect("/tosti")
+}
+
 function renderHome(req, res){
+    req.session.settings = null
     res.render("pages/index");
 }
 
-function renderStep1(req, res){
-    console.log("rendering step1");
-    res.render("pages/tosti1");
-    console.log(localStorage.getItem("myFirstKey"))
+function tostiPage(req, res){
+    const { settings } = req.session
+    console.log(req.session.settings)
+    res.render("pages/tosti", {settings});
+    // console.log(localStorage.getItem("myFirstKey"))
 }
-
-function renderTest(req, res){
-    res.render("pages/test");
-}
-
-function testPost(req, res){
-    console.log(req.body)
-    res.render("pages/test")
-}
-
-
 
 console.log(`App is listening to port ${port}`);
 app.listen(port);

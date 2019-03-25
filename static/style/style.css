@@ -70,7 +70,7 @@ i{
 main{
     margin-top: 5vh;
     height: 70vh;
-    min-width: 400px;
+    width: 80vw;
     max-height: 650px; 
     max-width: 500px;
     margin: auto;
@@ -97,7 +97,7 @@ label{
 /* Globals Zonder Javascript Styling
 ------------------ */
 main.zonderJS{
-    height: 85vh;
+    height: 70vh;
 }
 /* Styling classes 
 --------------------*/ 
@@ -148,11 +148,11 @@ main.zonderJS{
 #keuzes{
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 90%;
     justify-content: space-between;
     margin: 10px;
 }
-#keuzes .broodSoort > label{
+#keuzes .soort > label{
     color: black;
     font-weight: 400;
     font-size: 22px;
@@ -162,38 +162,48 @@ main.zonderJS{
     grid-column-start: 1;
     transition: .25s;
 }
-.broodSoort{
+.soort{
     display: grid;
     width: 80%;
     grid-template-columns: 1fr;
 }
-.broodKeuze{
+.keuzeScherm{
     width: 80%;
 }
 /* - Tosty Page 1 Zonder JS - */
-.broodKeuze.zonderJS{
+.keuzeScherm.zonderJS{
     height: 85%;
+    min-width: 300px;
 }
-.broodKeuze.zonderJS > form{
+.keuzeScherm.zonderJS > form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
 }
-.broodKeuze.zonderJS > form > .broodSoort{
+.keuzeScherm.zonderJS > form > .soort{
     width: 100%;
     height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
-.broodKeuze.zonderJS > form > .broodSoort > label{
-    z-index: 9000;
+.keuzeScherm.zonderJS > form > .soort > label{
     background: rgba(0,0,0,.5);
     border-radius: 10px;
-    width: 100%;
-    height: 60px;
+    width: 40%;
+    padding: 10px;
+    opacity: .7;
     color: rgba(255,255,255,.5);
     transition: .25s;
+    min-width: 120px;
 }
-.broodKeuze.zonderJS > form > .broodSoort > input[type="radio"]:checked + label{
+.keuzeScherm.zonderJS > form > .soort > label img{
+    width: 100px;
+}
+.keuzeScherm.zonderJS > form > .soort > input[type="radio"]:checked + label{
+    opacity: 1;
     background: black;
     color: white;
 }
