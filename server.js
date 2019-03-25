@@ -7,7 +7,7 @@ const LocalStorage = require('node-localstorage').LocalStorage;
 const localStorage = new LocalStorage('./scratch');
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(express.static("static"));
 
 app.set("view engine", "ejs");
@@ -24,9 +24,9 @@ app.post("/testPost", testPost);
 
 function tosti1POST(req, res, next){
     console.log(req.body)
-    console.log(req.session)
-    res.render("pages/tosti1");
+    console.log(req)
     res.redirect(`/test/${req.body.brood}`);
+    // res.render("pages/tosti1");
     // next();
 }
 

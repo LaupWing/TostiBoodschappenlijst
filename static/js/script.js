@@ -1,3 +1,7 @@
+// import { constants } from "crypto";
+import {breadSVG} from './breadSVG.js';
+console.log("test")
+console.log(breadSVG)
 let active = 0;
 function init(){
     document.querySelector("main").classList.remove("zonderJS");
@@ -19,9 +23,15 @@ function init(){
         prev,
         next
     }
-    console.log(noJs)
     addEvents(obj);
 }
+
+function removeElements(parent){
+    while(parent.firstChild){
+        parent.removeChild(container.firstChild);
+    }
+}
+
 
 function addEvents(obj){
     obj.next.addEventListener("click", selection);
@@ -40,8 +50,6 @@ function selection(){
     // }else{
     //     console.log("FOOOOUT")
     // }
-    console.log(allLabels.length)
-    console.log(active)
     if(this.id === "next" && active < (allLabels.length-1)){
         active++;
     }
@@ -83,6 +91,15 @@ function setBreadColors(value){
     //     value.classList.add(value)
     // });
 }
-
+function checkQuerySelector(element){
+    if(document.querySelector){
+        return document.querySelector(element)
+    }else{
+        console.log("why?")
+    }
+}
+console.log(document)
+document.querySelector("div")
+console.log(checkQuerySelector("div"))
 // First initializing
 init();
