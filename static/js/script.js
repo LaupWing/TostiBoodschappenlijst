@@ -3,16 +3,14 @@ import {breadSVG} from './breadSVG.js';
 console.log("test")
 console.log(breadSVG)
 let active = 0;
+
 function init(){
-    document.querySelector("main").classList.remove("zonderJS");
-    const js = document.querySelectorAll(".none");
-    js.forEach(x=>{
-        x.classList.remove("none")
-    })
-    const noJs = document.querySelectorAll(".zonderJS");
-    noJs.forEach(x=>{
-        x.classList.add("none")
-    })
+    const main = document.querySelector("main");
+    main.classList.remove("zonderJS");
+    removeElements(main)
+    main.insertAdjacentHTML('beforeend', breadSVG());
+
+    // Zero State setting
     const allLabels = document.querySelectorAll("label");
     allLabels[0].classList.add("visible");
     allLabels[0].click();
@@ -24,11 +22,12 @@ function init(){
         next
     }
     addEvents(obj);
+    arrowSettings()
 }
 
 function removeElements(parent){
     while(parent.firstChild){
-        parent.removeChild(container.firstChild);
+        parent.removeChild(parent.firstChild);
     }
 }
 
@@ -39,17 +38,6 @@ function addEvents(obj){
 }
 function selection(){
     const allLabels = document.querySelectorAll("#keuzes label");
-    // if(this.id === "next"){
-    //     active++
-    //     allLabels.forEach(label=>label.classList.remove("visible"));
-    //     allLabels[active].classList.add("visible");
-    // }else if(active > 0){
-    //     active--
-    //     allLabels.forEach(label=>label.classList.remove("visible"));
-    //     allLabels[active].classList.add("visible");
-    // }else{
-    //     console.log("FOOOOUT")
-    // }
     if(this.id === "next" && active < (allLabels.length-1)){
         active++;
     }
@@ -62,6 +50,7 @@ function selection(){
     else{
         active = 0;
     }
+    arrowSettings()
     allLabels.forEach(label=>label.classList.remove("visible"));
     allLabels[active].classList.add("visible");
     console.log(allLabels[active].textContent.split(" ")[0])
@@ -69,28 +58,31 @@ function selection(){
     setBreadColors(allLabels[active].textContent.split(" ")[0]) 
 }
 
-function setBreadColors(value){
-    document.querySelector("#InnerBrood").removeAttribute("class")
-    document.querySelector("#InnerBroodShadow").removeAttribute("class")  
-    document.querySelector("#BroodKorst").removeAttribute("class")
-    document.querySelector("#BroodKorstShadow").removeAttribute("class")
-
-    document.querySelector("#InnerBrood").classList.add(value)
-    document.querySelector("#InnerBroodShadow").classList.add(value)
-    document.querySelector("#BroodKorst").classList.add(value)
-    document.querySelector("#BroodKorstShadow").classList.add(value)
-    // const breadObj = {
-    //     innerBread : document.querySelector("#InnerBrood"),
-    //     innerBreadShadow : document.querySelector("#InnerBroodShadow"),
-    //     breadCrust : document.querySelector("#BroodKorst"),
-    //     breadCrustShadow : document.querySelector("#BroodKorstShadow")
-    // }
-    // console.log(Object.values(breadObj))
-    // Object.values(breadObj).forEach(value=>{
-    //     console.log(value)
-    //     value.classList.add(value)
-    // });
+function arrowSettings(){
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
+    next.classList.remove("disabled");
+    prev.classList.remove("disabled");
+    if(active === 0 ){
+        prev.classList.add("disabled");
+    }else if(active === (document.querySelectorAll("#keuzes label").length -1)){
+        next.classList.add("disabled");
+    }
 }
+
+
+function setBreadColors(value){
+    const breadObj = {
+        innerBread : document.querySelector("#InnerBrood"),
+        innerBreadShadow : document.querySelector("#InnerBroodShadow"),
+        breadCrust : document.querySelector("#BroodKorst"),
+        breadCrustShadow : document.querySelector("#BroodKorstShadow")
+    }
+    Object.values(breadObj).forEach(el=>{
+        el.className = value
+    });
+}
+
 function checkQuerySelector(element){
     if(document.querySelector){
         return document.querySelector(element)
@@ -101,5 +93,6 @@ function checkQuerySelector(element){
 console.log(document)
 document.querySelector("div")
 console.log(checkQuerySelector("div"))
+
 // First initializing
 init();

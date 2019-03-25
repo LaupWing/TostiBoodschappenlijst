@@ -8,12 +8,16 @@
 body{
     font-family: 'Fredoka One', cursive;
     background: #86D8FD;
+    height: 100vh;
 }
 header{
     width: 100vw;
     height: 10vh;
+    max-height: 70px;
     background: #FFBF04;
     color: white;
+    position: fixed;
+    top: 0;
 }
 nav{
     display: flex;
@@ -29,6 +33,7 @@ img{
 }
 a,
 button{
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -48,11 +53,27 @@ button{
 i{
     color:white;
     font-size: 30px;
+    cursor: pointer;
+    transition: .25s;
+    transform-origin: center;
+}
+.fas.fa-angle-right:hover,
+.fas.fa-angle-left:hover{
+    transform: scale(1.35);
+    text-shadow: 2px 2px 12px rgba(28,110,164,0.73);
+}
+.fas.fa-angle-right.disabled:hover,
+.fas.fa-angle-left.disabled:hover{
+    transform: scale(1);
+    text-shadow: none;
 }
 main{
     margin-top: 5vh;
     height: 70vh;
+    min-width: 400px;
     max-height: 650px; 
+    max-width: 500px;
+    margin: auto;
     justify-content: space-around;
 }
 input[type="radio"]{
@@ -70,17 +91,16 @@ button:hover{
 h1,h2,h3{
     color: white;
 }
+label{
+    cursor: pointer;
+}
 /* Globals Zonder Javascript Styling
 ------------------ */
 main.zonderJS{
     height: 85vh;
 }
 /* Styling classes 
---------------------*/
-.none{
-    height: 0 !important; 
-    display: none !important;
-}
+--------------------*/ 
 .visible{
     opacity: 1 !important;
 }
@@ -105,6 +125,9 @@ main.zonderJS{
 }
 .img-container{
     border-radius: 50%;
+}
+.disabled{
+    opacity: .3;
 }
 
 /* Homepage Styling 
@@ -145,7 +168,7 @@ main.zonderJS{
     grid-template-columns: 1fr;
 }
 .broodKeuze{
-    width: 80vw;
+    width: 80%;
 }
 /* - Tosty Page 1 Zonder JS - */
 .broodKeuze.zonderJS{
