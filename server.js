@@ -45,8 +45,12 @@ function jsCheck(req,res){
 
 function addItem(req,res){
     const { body } = req;
+    console.log("logging added items")
+    console.log(req.body)
     req.session.settings.tosti = (req.session.settings.tosti || new Array())
-        .concat(Object.values(body))
+        .concat(...Object.values(body))
+    // console.log(req.session)
+    console.log(req.session.settings)
     res.redirect("/tosti")
 }
 
@@ -57,7 +61,6 @@ function renderHome(req, res){
 
 function tostiPage(req, res){
     const { settings } = req.session
-    console.log(req.session.settings)
     res.render("pages/tosti", {settings});
 }
 
