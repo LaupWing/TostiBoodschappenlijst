@@ -76,6 +76,11 @@ main{
     margin: auto;
     justify-content: space-around;
 }
+input[type="checkbox"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
 input[type="radio"]{
     display: none;
 }
@@ -143,7 +148,54 @@ main.zonderJS{
     animation: shadow 3s infinite ease-out;
 }
 
-/* Tosti Page 1 Styling 
+/* Svg Styling Homepage
+--------------------*/
+svg{
+    width: 200px;
+}
+svg > * {
+    transition: .25s;
+}
+@keyframes upDownAnim{
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(0,20px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+
+@keyframes shadow{
+    0%{
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.8);
+    }
+}
+/* Stacking Elements with Display grid
+------------------- */
+/* Parent */
+.soort,
+.beleg{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+/* Childs */
+#keuzes .soort > .optie,
+.beleg-categorie-opties{
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+
+/* Bread Page Styling 
 --------------------*/
 #keuzes{
     display: flex;
@@ -158,19 +210,15 @@ main.zonderJS{
     font-size: 22px;
     text-align: center;
     opacity: 0;
-    grid-row-start: 1;
-    grid-column-start: 1;
     transition: .25s;
 }
 .soort{
-    display: grid;
     width: 80%;
-    grid-template-columns: 1fr;
 }
 .keuzeScherm{
     width: 80%;
 }
-/* - Tosty Page 1 Zonder JS - */
+/* - Bread Page Zonder JS - */
 .keuzeScherm.zonderJS{
     height: 85%;
     min-width: 300px;
@@ -210,34 +258,55 @@ main.zonderJS{
 button.zonderJS{
     margin: 10px auto;
 }
-/* Svg Styling 
+/* Beleg Page Styling 
 --------------------*/
-svg{
-    width: 200px;
+main#beleg{
+    height: 80vh;
 }
-svg > * {
-    transition: .25s;
+.beleg{
+    height: 30vh;
+    width: 80%;
 }
-@keyframes upDownAnim{
-    0%{
-        transform: translate(0,0);
-    }
-    50%{
-        transform: translate(0,20px);
-    }
-    100%{
-        transform: translate(0,0);
-    }
+.beleg-categorie-opties{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    opacity: 0;
+    display: none;
+}
+.beleg-categorie-opties.visible{
+    display: flex;
+}
+.beleg-keuzes{
+    width: 100%;
+    margin: 10px;
+    height: 10vh;
+    background: rgba(0,0,0,.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+.beleg-keuzes div{
+    width: 18%;
+}
+.beleg-keuzes div img{
+    width: 100%;
 }
 
-@keyframes shadow{
-    0%{
-        transform: scale(0.8);
-    }
-    50%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(0.8);
-    }
+.beleg-categoriën{
+    width: 100%;
+}
+
+.beleg-categorie-opties img{
+    width: 80px;
+}
+.beleg-categorie-opties label{
+    opacity: .5;
+    transition: .25s;
+}
+.beleg-categorie-opties input[type="checkbox"]:checked + label{
+    opacity: 1;
 }

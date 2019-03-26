@@ -13,7 +13,7 @@ function init(){
         next
     }
     addEvents(obj);
-    arrowSettings()
+    arrowState()
 }
 
 
@@ -22,7 +22,7 @@ function addEvents(obj){
     obj.prev.addEventListener("click", arrowClick);
 }
 
-function selection(currentEl){
+function selectCategorie(currentEl){
     const opties = document.querySelectorAll("#keuzes .optie");
     if(currentEl.id === "next" && active < (opties.length-1)){
         active++;
@@ -36,7 +36,7 @@ function selection(currentEl){
     else{
         active = 0;
     }
-    arrowSettings()
+    arrowState()
     opties.forEach(optie=>optie.classList.remove("visible"));
     opties[active].classList.add("visible");
     const value = opties[active].textContent.split(" ")[0]
@@ -44,12 +44,12 @@ function selection(currentEl){
 }
 
 function arrowClick(){
-    setBreadColors(selection(this));
+    setBreadColors(selectCategorie(this));
     const labels = document.querySelectorAll('label'); 
     labels[active].click();
 }
 
-function arrowSettings(){
+function arrowState(){
     const prev = document.querySelector("#prev");
     const next = document.querySelector("#next");
     next.classList.remove("disabled");

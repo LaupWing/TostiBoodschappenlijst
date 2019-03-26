@@ -1,19 +1,83 @@
-<main class="spaceAround">
+<main id="beleg" class="spaceAround">
     <div class="info">
         <h2>Beleg Soort</h2>
         <p>Stap 2/4</p>
     </div>
     <div class="spaceAround keuzeScherm">
-        <div id="keuzes">
-            <nav>
-                <i id="prev" class="fas fa-angle-left"></i>
-                <div class="soort">
-                    <p class="optie">Vlees</p>
-                    <p class="optie">Groentes</p>
-                    <p class="optie">Kaas</p>
+        <div id="keuzes" class="centering">
+            <form class="centering" action="">
+                <div class="beleg">
+                    <div id="vlees" class="beleg-categorie-opties">
+                        <input type="checkbox" id="Ham" value="Ham">
+                        <label class="centering" for="Ham">
+                            <img src="img/Beleg/Vlees/Ham.png" alt="">
+                            <p>Ham</p>
+                        </label>
+                        <input type="checkbox" id="Salami" value="Salami">
+                        <label class="centering" for="Salami">
+                            <img src="img/Beleg/Vlees/Salami.png" alt="">
+                            <p>Salami</p>
+                        </label>
+                        <input type="checkbox" id="NoneVlees" value="NoneVlees">
+                        <label class="centering" for="NoneVlees">
+                            <img src="img/Beleg/None.png" alt="">
+                            <p>Geen</p>
+                        </label>
+                    </div>
+                    <div id="groente" class="beleg-categorie-opties">
+                        <input type="checkbox" id="Olijven" value="Olijven">
+                        <label class="centering" for="Olijven">
+                            <img src="img/Beleg/Groente/Olijven.png" alt="">
+                            <p>Olijven</p>
+                        </label>
+                        <input type="checkbox" id="Sla" value="Sla">
+                        <label class="centering" for="Sla">
+                            <img src="img/Beleg/Groente/Sla.png" alt="">
+                            <p>Sla</p>
+                        </label>
+                        <input type="checkbox" id="Tomaat" value="Tomaat">
+                        <label class="centering" for="Tomaat">
+                            <img src="img/Beleg/Groente/Tomaat.png" alt="">
+                            <p>Tomaat</p>
+                        </label>
+                        <input type="checkbox" id="NoneGroente" value="NoneGroente">
+                        <label class="centering" for="NoneGroente">
+                            <img src="img/Beleg/None.png" alt="">
+                            <p>Geen</p>
+                        </label>
+                    </div>
+                    <div id="kaas" class="beleg-categorie-opties">
+                        <input type="checkbox" id="Mozzerela" value="Mozzerela">
+                        <label class="centering" for="Mozzerela">
+                            <img src="img/Beleg/Kaas/Mozzerela.png" alt="">
+                            <p>Mozzerla</p>
+                        </label>
+                        <input type="checkbox" id="Kaas" value="Kaas">
+                        <label class="centering" for="Kaas">
+                            <img src="img/Beleg/Kaas/Kaas.png" alt="">
+                            <p>Kaas</p>
+                        </label>
+                        <input type="checkbox" id="NoneKaas" value="NoneKaas">
+                        <label class="centering" for="NoneKaas">
+                            <img src="img/Beleg/None.png" alt="">
+                            <p>Geen</p>
+                        </label>
+                    </div>
                 </div>
-                <i id="next" class="fas fa-angle-right"></i>
-            </nav>
+                <div class="beleg-keuzes">
+                    
+                </div>
+                <nav class="beleg-categoriën"> 
+                    <i id="prev" class="fas fa-angle-left"></i>
+                    <div class="soort">
+                        <p class="optie">Vlees</p>
+                        <p class="optie">Groentes</p>
+                        <p class="optie">Kaas</p>
+                    </div>
+                    <i id="next" class="fas fa-angle-right"></i>
+                </nav>
+                <button type="submit">Next</button>
+            </form>
         </div>
     </div>
 </main>
