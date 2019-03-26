@@ -5,19 +5,16 @@
     </div>
     <div class="spaceAround keuzeScherm">
         <div id="keuzes">
-            <form action="/add" method="POST">
-                <nav>
-                    <div class="soort">
-                        <div class="belegSoort">
-                            <input name="beleg" type="checkbox" id="Ham" value="Ham">
-                            <label class="centering" for="bruinBrood">
-                                <img src="" alt="">
-                            </label>
-                        </div>
-                    </div>
-                </nav>
-                <button type="submit">Next</button>
-            </form>
+            <nav>
+                <i id="prev" class="fas fa-angle-left"></i>
+                <div class="soort">
+                    <p class="optie">Vlees</p>
+                    <p class="optie">Groentes</p>
+                    <p class="optie">Kaas</p>
+                </div>
+                <i id="next" class="fas fa-angle-right"></i>
+            </nav>
         </div>
     </div>
 </main>
+<script src="js/beleg.js"></script>

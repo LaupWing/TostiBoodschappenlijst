@@ -152,7 +152,7 @@ main.zonderJS{
     justify-content: space-between;
     margin: 10px;
 }
-#keuzes .soort > label{
+#keuzes .soort > .optie{
     color: black;
     font-weight: 400;
     font-size: 22px;
@@ -189,7 +189,7 @@ main.zonderJS{
     align-items: center;
     justify-content: space-around;
 }
-.keuzeScherm.zonderJS > form > .soort > label{
+.keuzeScherm.zonderJS > form > .soort > .optie{
     background: rgba(0,0,0,.5);
     border-radius: 10px;
     width: 40%;
@@ -199,7 +199,7 @@ main.zonderJS{
     transition: .25s;
     min-width: 120px;
 }
-.keuzeScherm.zonderJS > form > .soort > label img{
+.keuzeScherm.zonderJS > form > .soort > .optie img{
     width: 100px;
 }
 .keuzeScherm.zonderJS > form > .soort > input[type="radio"]:checked + label{

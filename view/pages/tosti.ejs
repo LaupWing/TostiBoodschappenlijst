@@ -8,8 +8,14 @@
     <% if(!settings.javascript) { %>
         <% include ../partials/forms/jsNO/bread %>
     <% } else if(settings.javascript){ %>
-        <% include ../partials/forms/jsYES/bread %>
+        <% if (!settings.tosti) { %>
+            <% include ../partials/forms/jsYES/bread %>
+        <% } else { %>
+            <% if(settings.tosti.length === 1){ %>
+                <% include ../partials/forms/jsYES/beleg %>
+            <% } %>
+        <% } %>
     <% } %>
-    <script type="module" src="js/script.js"></script>
+    <!-- <script type="module" src="js/bread.js"></script> -->
 </body>
 </html>

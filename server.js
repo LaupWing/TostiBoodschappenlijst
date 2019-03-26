@@ -4,8 +4,6 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 5000;
 const session = require("express-session");
-const LocalStorage = require('node-localstorage').LocalStorage;
-const localStorage = new LocalStorage('./scratch');
 
 
 app
@@ -61,7 +59,6 @@ function tostiPage(req, res){
     const { settings } = req.session
     console.log(req.session.settings)
     res.render("pages/tosti", {settings});
-    // console.log(localStorage.getItem("myFirstKey"))
 }
 
 console.log(`App is listening to port ${port}`);
