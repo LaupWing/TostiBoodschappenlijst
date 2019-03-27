@@ -44,12 +44,10 @@ function jsCheck(req,res){
 
 
 function addItem(req,res){
-    const { body } = req;
-    console.log("logging added items")
-    console.log(req.body)
+    let { body } = req;
+    delete body.optie
     req.session.settings.tosti = (req.session.settings.tosti || new Array())
-        .concat(...Object.values(body))
-    // console.log(req.session)
+        .concat(Object.values(body))
     console.log(req.session.settings)
     res.redirect("/tosti")
 }

@@ -6,15 +6,20 @@
         <h1>Maak Uw Tosti</h1>
     </header>
     <% if(!settings.javascript) { %>
-        <% include ../partials/forms/jsNO/bread %>
+        <% if (!settings.tosti) { %>
+            <% include ../partials/forms/jsNO/bread %>
+        <% } else if(settings.tosti.length === 1) {%>
+            <% include ../partials/forms/jsNO/beleg %>
+        <% } else if(settings.tosti.length === 2){%>
+            <h2>Test</h2>
+        <% } %>
     <% } else if(settings.javascript){ %>
         <% if (!settings.tosti) { %>
             <% include ../partials/forms/jsYES/bread %>
         <% } else { %>
             <% if(settings.tosti.length === 1){ %>
                 <% include ../partials/forms/jsYES/beleg %>
-            <% } %>
-            <% else if(settings.tosti.length >= 2){ %>
+            <% } else if(settings.tosti.length >= 2){ %>
                 <h2>Work in progress</h2>
             <% } %>
         <% } %>

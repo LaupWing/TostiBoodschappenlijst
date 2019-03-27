@@ -76,13 +76,12 @@ main{
     margin: auto;
     justify-content: space-around;
 }
-input[type="checkbox"]{
+input[type="checkbox"],
+input[type="radio"]{
     position: absolute;
     width: 1px;
     height: 1px;
-}
-input[type="radio"]{
-    display: none;
+    cursor: pointer;
 }
 form{
     width: 100%;
@@ -216,7 +215,7 @@ svg > * {
     width: 80%;
 }
 .keuzeScherm{
-    width: 80%;
+    width: 100%;
 }
 /* - Bread Page Zonder JS - */
 .keuzeScherm.zonderJS{
@@ -263,6 +262,9 @@ button.zonderJS{
 main#beleg{
     height: 80vh;
 }
+#beleg nav{
+    width: 100%;
+}
 .beleg{
     height: 30vh;
     width: 80%;
@@ -282,7 +284,7 @@ main#beleg{
 .beleg-keuzes{
     width: 100%;
     margin: 10px;
-    height: 10vh;
+    height: 8vh;
     background: rgba(0,0,0,.2);
     border-radius: 10px;
     display: flex;
@@ -310,3 +312,84 @@ main#beleg{
 .beleg-categorie-opties input[type="checkbox"]:checked + label{
     opacity: 1;
 }
+/* Beleg page Zonder Javascript */
+#beleg .zonderJS nav label{
+    width: calc(100%/3);
+    padding: 10px;
+    background: rgba(0,0,0,.8);
+    opacity: .5;
+    text-align: center;
+    transition: .25s;
+}
+
+#beleg .zonderJS .beleg{
+    height: 30vh;
+    width: 100%;
+    margin: 5vh;
+}
+
+#beleg .zonderJS .beleg-categorie-opties{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    transform: translate(0,-10vh);
+    transition: .7s;
+    pointer-events: none;
+}
+
+#beleg .zonderJS #toggleVlees:checked ~* .vleesBtn,
+#beleg .zonderJS #toggleGroente:checked ~* .groenteBtn,
+#beleg .zonderJS #toggleKaas:checked ~* .kaasBtn {
+    opacity: 1;
+    color: white;
+}
+
+#beleg .zonderJS #toggleVlees:checked ~* #vleesCategorie,
+#beleg .zonderJS #toggleGroente:checked ~* #groenteCategorie,
+#beleg .zonderJS #toggleKaas:checked ~* #kaasCategorie {
+    pointer-events: fill;
+    opacity: 1;
+    display: flex;
+    transform: translate(0,0);
+}
+#beleg .zonderJS .beleg input[type='checkbox']:checked +label{
+    opacity: 1;
+}
+
+@media only screen and (max-height: 650px) {
+    img{
+        width: 120px;
+    }
+    main#beleg{
+        margin-bottom: 5vh;
+    }
+    .info > h2{
+        font-size: 24px;
+    }
+    button{
+        margin: 10px auto;
+    }
+    .beleg-categorie-opties img{
+        width: 100%;
+    }
+    .beleg-categorie-opties label{
+        width: 40%;
+    }
+    form > div.beleg,
+    #beleg .zonderJS .beleg{
+        height: 35vh;
+    }
+    .beleg-keuzes div{
+        width: 15%;
+    }
+    .keuzeScherm.zonderJS > form > .soort > .optie {
+        width: 40%;
+        padding: 5px;
+        min-width: 40px;
+    }
+    #beleg .zonderJS .beleg-categorie-opties {
+        width: 80%;
+        margin: auto;
+    }
+  }
