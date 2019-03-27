@@ -284,7 +284,7 @@ main#beleg{
 .beleg-keuzes{
     width: 100%;
     margin: 10px;
-    height: 8vh;
+    height: 12vh;
     background: rgba(0,0,0,.2);
     border-radius: 10px;
     display: flex;
@@ -357,6 +357,83 @@ main#beleg{
     opacity: 1;
 }
 
+/* Saus Page Styling 
+--------------------*/
+.saus{
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+}
+.saus label{
+    width: 40%;
+    margin: 10px;
+    opacity: .5;
+    transition: .25s; 
+    max-width: 150px;
+}
+.saus input[type='checkbox']:checked + label{
+    opacity: 1;
+}
+.saus label img{
+    width: 100%;
+}
+
+#saus #NoneSaus:checked ~* .sausOptie{
+    display: none;
+}
+#saus #NoneSaus:checked ~* .NoneSaus{
+    opacity: 1;
+} 
+/* Tosti Result Page Styling 
+--------------------*/
+main#result{
+    height: 80vh;
+    margin-bottom: 5vh;
+}
+#result .tostiResult{
+    height: 50vh;
+    width: 100%;
+}
+.broodKeuze img,
+.belegKeuze img,
+.sausKeuze img{
+    margin: 3px;
+    width: 18%;
+}
+.broodKeuze,
+.belegKeuze,
+.sausKeuze{
+    background: rgba(0,0,0,.7);
+    color: lightblue;
+    border-radius: 10px;
+    padding: 10px 0;
+    margin: 5px;
+    height: 30%;
+}
+.resultKeuze-container{
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    /* width: 100%; */
+}
+.resultKeuze-container img{
+    width: 100%;
+}
+.resultKeuze-container .resultKeuze{
+    width: 15%;
+    margin:0 20px;
+}
+main#result form{
+    height: auto;
+}
+
+@media only screen and (max-width: 650px) {
+    .beleg-keuzes{
+        height: 8vh;
+    }
+}
 @media only screen and (max-height: 650px) {
     img{
         width: 120px;
@@ -391,5 +468,16 @@ main#beleg{
     #beleg .zonderJS .beleg-categorie-opties {
         width: 80%;
         margin: auto;
+    }
+    .broodKeuze img,
+    .belegKeuze img,
+    .sausKeuze img{
+        margin: 3px;
+        width: 15%;
+    }
+    .broodKeuze,
+    .belegKeuze,
+    .sausKeuze{
+        font-size: 12px;
     }
   }

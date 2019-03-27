@@ -48,7 +48,6 @@ function addItem(req,res){
     delete body.optie
     req.session.settings.tosti = (req.session.settings.tosti || new Array())
         .concat(Object.values(body))
-    console.log(req.session.settings)
     res.redirect("/tosti")
 }
 
@@ -59,6 +58,7 @@ function renderHome(req, res){
 
 function tostiPage(req, res){
     const { settings } = req.session
+    console.log(settings)
     res.render("pages/tosti", {settings});
 }
 

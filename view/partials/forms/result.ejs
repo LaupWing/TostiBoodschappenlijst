@@ -1,0 +1,61 @@
+<main id="result" class="spaceAround">
+    <div class="info">
+        <h2>Bevestig Tosti</h2>
+        <p>Stap 4/4</p>
+    </div>
+    <div class="spaceAround keuzeScherm">
+        <div class="tostiResult spaceAround">
+            <div class="broodKeuze centering">
+                <p class="keuze">Brood Keuze:</p>
+                <div class="resultKeuze centering">
+                    <img src="img/Brood/<%= settings.tosti[0] %>.png" alt="">
+                    <p><%= settings.tosti[0] %> Brood</p>
+                </div>
+            </div>
+            <div class="belegKeuze centering">
+                <p class="keuze">Beleg Keuze:</p>
+                <div class="resultKeuze-container">
+                    <% if(Array.isArray(settings.tosti[1])) { %>
+                        <% settings.tosti[1].forEach(beleg =>{ %>
+                            <div class="resultKeuze centering">
+                                <img src="img/Beleg/<%= beleg %>.png" alt="">
+                                <p><%= beleg %></p>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <div class="resultKeuze centering">
+                            <img src="img/Beleg/<%= settings.tosti[1] %>.png" alt="">
+                            <%= settings.tosti[1] %>
+                        </div>
+                    <% }%>
+                </div>
+            </div>
+            <div class="sausKeuze centering">
+                <p class="keuze">Saus Keuze</p>
+                <div class="resultKeuze-container">
+                    <% if(settings.tosti[2].includes('NoneSaus')) { %>
+                        <div class="resultKeuze centering">
+                            <img src="img/saus/None.png" alt="">
+                            <p>Geen</p>
+                        </div>
+                    <% } else if(!Array.isArray(settings.tosti[2])) { %>
+                        <div class="resultKeuze centering">
+                            <img src="img/Saus/<%= settings.tosti[2] %>.png" alt="">
+                            <%= settings.tosti[2]  %>
+                        </div>
+                    <% } else {%>
+                        <% settings.tosti[2].forEach(saus =>{ %>
+                            <div class="resultKeuze centering">
+                                <img src="img/Saus/<%= saus %>.png" alt="">
+                                <%= saus %>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            </div> 
+        </div>
+        <form action="">
+            <button type="submit">Make it</button>
+        </form>
+    </div>
+</main>
