@@ -428,7 +428,82 @@ main#result{
 main#result form{
     height: auto;
 }
-
+/* Boodschappen Page Styling 
+--------------------*/
+#boodschappenlijst .paper{
+    /* padding: 37px 55px 27px; */
+    position: relative;
+    border: 1px solid #B5B5B5;
+    background: white;
+    background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    -webkit-background-size: 100% 30px;
+    -moz-background-size: 100% 30px;
+    -ms-background-size: 100% 30px;
+    background-size: 100% 30px;
+    width: 100%;
+    height: 100%;
+}
+#boodschappenlijst .paper::before {
+    content:""; 
+    z-index:-1; 
+    margin:0 1px; 
+    width:99%; 
+    height:20px; 
+    position:absolute; 
+    bottom:-5px; 
+    left:0; 
+    background:white; 
+    border:1px solid #B5B5B5;
+}
+#boodschappenlijst .paper::after {
+    content:''; 
+    position:absolute; 
+    width:0px; 
+    top:0; 
+    left:39px; 
+    bottom:0; 
+    border-left:1px solid #F8D3D3;
+}
+#boodschappenlijst input[type='text']{
+    margin: 3px auto;
+    height: 20px;
+    width: 50%;
+    display: block;
+}
+#boodschappenlijst input[type='checkbox']{
+    position: unset;
+    width: 20px;
+    height: 20px;
+}
+#boodschappenlijst .item{
+    width: 100%;
+    height: 29.5px;
+    display: flex;
+    align-items: center;
+}
+#boodschappenlijst .item div {
+    width: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#boodschappenlijst .item label{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.voegBoodschappenToe{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.voegBoodschappenToe button{
+    margin: 10px;
+}
+/* Media Query's 
+--------------------*/
 @media only screen and (max-width: 650px) {
     .beleg-keuzes{
         height: 8vh;
@@ -481,3 +556,9 @@ main#result form{
         font-size: 12px;
     }
   }
+@media only screen and (min-width: 550px) {
+    main#boodschappenlijst{
+        height: 80vh;
+        margin-bottom: 7vh;
+    }
+}

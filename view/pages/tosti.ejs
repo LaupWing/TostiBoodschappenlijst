@@ -12,7 +12,9 @@
             <% include ../partials/forms/jsNO/beleg %>
         <% } else if(settings.tosti.length === 2){%>
             <% include ../partials/forms/saus %>
-        <% } %>
+        <% } else if(settings.tosti.length > 2){ %>
+            <% include ../partials/forms/result %>
+        <% }%>
     <% } else if(settings.javascript){ %>
         <% if (!settings.tosti) { %>
             <% include ../partials/forms/jsYES/bread %>

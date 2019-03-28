@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../partials/head %>
+<body class="centering">
+    <header class="centering">
+        <h1>Boodschappenlijst</h1>
+    </header>
+    <main id="boodschappenlijst" class="spaceAround">
+        <div class="paper">
+            <% tostiArray.forEach(ingredient =>{ %>
+                <div class="item">
+                    <div>
+                        <input type="checkbox" id='<%= ingredient %>'>
+                    </div>
+                    <label for="<%= ingredient %>"><%= ingredient %></label>
+                </div>
+            <% }) %>
+            <form action="/voegBoodschappenToe" method="POST">
+                <div class="voegBoodschappenToe centering">
+                    <input name="boodschappen" type="text">
+                    <button type="submit">Voeg Toe!</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="js/jsCheck.js"></script>
+</body>
+</html>

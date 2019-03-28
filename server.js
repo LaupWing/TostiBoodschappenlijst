@@ -22,8 +22,11 @@ app
 app
     .get("/", renderHome)
     .get("/tosti", tostiPage)
+    .get('/boodschappen', boodschappenPage)
     .post("/add", addItem)
-    .post('/:id', jsCheck);
+    .post('/:id', jsCheck)
+    .post('/voegBoodschappenToe', voegBoodschappenToe);
+
 
 
 function jsCheck(req,res){
@@ -49,6 +52,21 @@ function addItem(req,res){
     req.session.settings.tosti = (req.session.settings.tosti || new Array())
         .concat(Object.values(body))
     res.redirect("/tosti")
+}
+function boodschappenPage(req,res){
+    const {tosti} = req.session.settings;
+    const tostiArray = [].concat.apply([], tosti);
+    tostiArray[0] = tostiArray[0] + " Brood"
+    res.render('pages/lijst',{
+        tostiArray,
+
+    })
+}
+
+function voegBoodschappenToe(req,res){
+    console.log(req.body)
+    console.log("DOE WAT")
+    // res.redirect('/boodschappen')
 }
 
 function renderHome(req, res){
