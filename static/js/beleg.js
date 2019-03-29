@@ -1,6 +1,6 @@
-import {addClickKeuze} from '/helper.js'
+// import {addClickKeuze} from '/helper.js'
 let active = 0;
-addClickKeuze()
+// addClickKeuze()
 
 function init(){
     // Zero State setting
