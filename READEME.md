@@ -45,7 +45,8 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
 
 
 ## Tosti Boodschappenlijst
-### 1. Images 
+### 1. Images
+Bij de tosti app had ik precies hetzelfde probleem ondervonden als bij de  
 * Problemen
     * Afbeelding worden niet weergeven
     * Visueel minder aantrekkelijk
