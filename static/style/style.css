@@ -58,10 +58,14 @@ i{
     transform-origin: center;
 }
 .fas.fa-angle-right:hover,
-.fas.fa-angle-left:hover{
+.fas.fa-angle-left:hover,
+.fas.fa-angle-right:focus,
+.fas.fa-angle-left:focus{
     transform: scale(1.35);
     text-shadow: 2px 2px 12px rgba(28,110,164,0.73);
 }
+.fas.fa-angle-right.disabled:hover,
+.fas.fa-angle-left.disabled:hover,
 .fas.fa-angle-right.disabled:hover,
 .fas.fa-angle-left.disabled:hover{
     transform: scale(1);

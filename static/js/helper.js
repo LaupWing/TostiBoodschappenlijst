@@ -37,3 +37,14 @@ function arrowSettings(active){
         next.classList.add("disabled");
     }
 }
+
+
+export function addClickKeuze(){
+    document.querySelectorAll('i').forEach(i=>{
+        i.addEventListener('keypress',function(e){
+            if(e.keyCode === 13){
+                i.click()
+            }
+        })
+    })
+}

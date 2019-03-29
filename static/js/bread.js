@@ -1,4 +1,6 @@
+import {addClickKeuze} from './helper.js'
 let active = 0;
+addClickKeuze()
 
 function init(){
     // Zero State setting
@@ -15,7 +17,7 @@ function init(){
     addEvents(obj);
     arrowState()
 }
-
+ window.addEventListener('keypress',function(e){console.log(e)})
 
 function addEvents(obj){
     obj.next.addEventListener("click", arrowClick);
