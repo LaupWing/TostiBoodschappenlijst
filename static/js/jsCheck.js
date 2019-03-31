@@ -1,1 +1,3 @@
-document.querySelector('form').action = '/javascriptYES'
+if(document.querySelector('form')){
+    document.querySelector('form').action = '/javascriptYES'
+}
