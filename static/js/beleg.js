@@ -86,6 +86,7 @@ function checkExistence(listOfNodes, element){
 }
 
 function selectCategorie(){
+    console.log('click')
     const opties = document.querySelectorAll(".optie");
     const belegOpties = document.querySelectorAll(".beleg-categorie-opties");
     if(this.id === "next" && active < (opties.length-1)){

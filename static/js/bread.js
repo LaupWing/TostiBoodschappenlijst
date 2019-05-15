@@ -46,6 +46,7 @@ function selectCategorie(currentEl){
 }
 
 function arrowClick(){
+    console.log('click')
     setBreadColors(selectCategorie(this));
     const labels = document.querySelectorAll('label'); 
     labels[active].click();
