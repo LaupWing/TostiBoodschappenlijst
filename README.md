@@ -2,10 +2,10 @@
 Hieronderin kan je de resultaten vinden van het onderzoek van het vak Browser Technologie. Bij het onderzoek worden er verschillende features uitgezet om te bekijken wat er met de website gebeurt als deze features worden uitgezet of die uitstaan. Dit zorgt ervoor dat we real life scenario's kunnen recreeëren voor het geval deze features uistaan en wat we er mogelijk voor kunnen doen. 
 
 ## Table of Contents
-* [Oba App](#oba-app-)
-* [Tosti Boodschappenlijst](#tosti-Boodschappenlijst-)
+* [Oba App](#oba-app)
+* [Tosti Boodschappenlijst](#tosti-boodschappenlijst-)
     * [Feature Testing Tosti](#feature-testing-tosti-)
-* [To Do List](#To-Do-List-)
+* [To Do List](#to-do-list)
 
 ## Oba App
 <details>
