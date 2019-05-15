@@ -1,7 +1,10 @@
 # Browser Technologie
 Hieronderin kan je de resultaten vinden van het onderzoek van het vak Browser Technologie. Bij het onderzoek worden er verschillende features uitgezet om te bekijken wat er met de Oba website gebeurt als deze features worden uitgezet of die uistaan.
 ## Oba app
-Wat gebeurt er als er 1 van deze onderdelen niet doen op mijn oba website.
+<details>
+<summary>Wat gebeurt er als er 1 van deze onderdelen niet doen op mijn oba website.</summary>
+
+
 ### 1. Images 
 * Problemen
     * Afbeelding worden niet weergeven
@@ -42,6 +45,7 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
     * Background en kleur contrast duurt langer om te laden
 * Oplossing
     * Niet/ of cookies gebruiken
+</details>
 
 
 ## Tosti Boodschappenlijst
