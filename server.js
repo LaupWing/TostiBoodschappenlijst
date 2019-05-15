@@ -81,4 +81,4 @@ function tostiPage(req, res){
 }
 
 console.log(`App is listening to port ${port}`);
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || port);

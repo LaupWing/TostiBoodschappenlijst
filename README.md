@@ -5,6 +5,8 @@ Hieronderin kan je de resultaten vinden van het onderzoek van het vak Browser Te
 * [Oba App](#oba-app)
 * [Tosti Boodschappenlijst](#tosti-boodschappenlijst)
     * [Feature Testing Tosti](#feature-testing-tosti)
+    * [Hoe gebruik ik de app?](#hoe-gebruik-ik-de-app?)
+    * [App Wireflow](#app-wireflow)
 * [To Do List](#to-do-list)
 
 ## Oba App
@@ -55,6 +57,24 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
 
 
 ## Tosti Boodschappenlijst
+### Hoe gebruik ik de app?
+```
+Git clone deze repo
+
+In command Line typ je: 
+
+npm install
+
+npm start
+
+In browser:
+localhost:5000
+
+```
+
+### App Wireflow
+![alt text](./images/Wireflow.png)
+
 ### Feature Testing Tosti
 #### 1. Images
 Bij de tosti app had ik precies hetzelfde probleem ondervonden als bij de  
