@@ -4,7 +4,6 @@ Hieronderin kan je de resultaten vinden van het onderzoek van het vak Browser Te
 <details>
 <summary>Wat gebeurt er als er 1 van deze onderdelen niet doen op mijn oba website.</summary>
 
-
 ### 1. Images 
 * Problemen
     * Afbeelding worden niet weergeven
