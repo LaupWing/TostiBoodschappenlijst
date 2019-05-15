@@ -119,4 +119,6 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
     * Niet/ of cookies gebruiken
 
 ## To Do List
-- [ ] Aanvulling   
+- [ ] Contrast net fout
+- [x] Labels Outline
+- [x] Geen alt tekst nodig   

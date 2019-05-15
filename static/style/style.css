@@ -102,6 +102,9 @@ h1,h2,h3{
 label{
     cursor: pointer;
 }
+input:focus + label{
+    border: rgba(0,0,0,.2) solid 1px;
+}
 /* Globals Zonder Javascript Styling
 ------------------ */
 main.zonderJS{
