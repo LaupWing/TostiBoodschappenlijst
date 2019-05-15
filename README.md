@@ -3,8 +3,8 @@ Hieronderin kan je de resultaten vinden van het onderzoek van het vak Browser Te
 
 ## Table of Contents
 * [Oba App](#oba-app)
-* [Tosti Boodschappenlijst](#tosti-boodschappenlijst-)
-    * [Feature Testing Tosti](#feature-testing-tosti-)
+* [Tosti Boodschappenlijst](#tosti-boodschappenlijst)
+    * [Feature Testing Tosti](#feature-testing-tosti)
 * [To Do List](#to-do-list)
 
 ## Oba App
