@@ -120,5 +120,6 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
 
 ## To Do List
 - [ ] Contrast net fout
+    - Kleuren veranderne van de tekst omdat de witte tekst met licht blauwe achtergrond niet goed werkt. 
 - [x] Labels Outline
 - [x] Geen alt tekst nodig   
