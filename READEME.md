@@ -75,6 +75,9 @@ localhost:5000
 ### App Wireflow
 ![alt text](./images/Wireflow.png)
 
+
+
+
 ### Feature Testing Tosti
 #### 1. Images
 Bij de tosti app had ik precies hetzelfde probleem ondervonden als bij de  
@@ -118,7 +121,25 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
 * Oplossing
     * Niet/ of cookies gebruiken
 
-## To Do List
+### Feature detection 
+#### Javascript detection
+Gebruiker word naar een versie van de website geleid aan de hand van of javascript aanwezig is in de browser
+```js
+if(document.querySelector){
+    if(document.querySelector('form')){
+        document.querySelector('form').action = '/javascriptYES'
+    }
+}else{
+    // Oldest function
+    document.getElementsByTagName('form').action = '/javascriptYES'
+}
+``` 
+#### Javascript querySelector detection
+Als querySelector niet aanwezig is dan word de oudste manier gebruikt namelijk getElementsByTagName
+```js
+document.getElementsByTagName('form').action = '/javascriptYES'
+```
+### To Do List
 - [ ] Contrast net fout
     - Kleuren veranderne van de tekst omdat de witte tekst met licht blauwe achtergrond niet goed werkt. 
 - [x] Labels Outline
