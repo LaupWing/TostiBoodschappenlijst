@@ -143,4 +143,5 @@ document.getElementsByTagName('form').action = '/javascriptYES'
 - [ ] Contrast net fout
     - Kleuren veranderne van de tekst omdat de witte tekst met licht blauwe achtergrond niet goed werkt. 
 - [x] Labels Outline
-- [x] Geen alt tekst nodig   
+- [x] Geen alt tekst nodig
+- [ ] Noteren wat de verbeteringen waren   
