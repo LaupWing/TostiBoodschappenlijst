@@ -139,6 +139,10 @@ Als querySelector niet aanwezig is dan word de oudste manier gebruikt namelijk g
 ```js
 document.getElementsByTagName('form').action = '/javascriptYES'
 ```
+
+### Feedback Verbeteringen
+
+
 ### To Do List
 - [x] Contrast net fout
     - Kleuren veranderne van de tekst omdat de witte tekst met licht blauwe achtergrond niet goed werkt. 
