@@ -133,6 +133,7 @@ main.zonderJS{
     text-align: center;
 }
 .info >h2{
+    text-shadow:2px 2px 2px #000000;
     font-size: 28px;
 }
 .img-container{

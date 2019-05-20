@@ -140,7 +140,7 @@ Als querySelector niet aanwezig is dan word de oudste manier gebruikt namelijk g
 document.getElementsByTagName('form').action = '/javascriptYES'
 ```
 ### To Do List
-- [ ] Contrast net fout
+- [x] Contrast net fout
     - Kleuren veranderne van de tekst omdat de witte tekst met licht blauwe achtergrond niet goed werkt. 
 - [x] Labels Outline
 - [x] Geen alt tekst nodig
