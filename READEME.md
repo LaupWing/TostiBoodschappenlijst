@@ -4,9 +4,14 @@ Hieronderin kan je de resultaten vinden van het onderzoek van het vak Browser Te
 ## Table of Contents
 * [Oba App](#oba-app)
 * [Tosti Boodschappenlijst](#tosti-boodschappenlijst)
-    * [Feature Testing Tosti](#feature-testing-tosti)
     * [Hoe gebruik ik de app?](#hoe-gebruik-ik-de-app?)
     * [App Wireflow](#app-wireflow)
+    * [Feature Testing Tosti](#feature-testing-tosti)
+    * [Feature Detection](#feature-detection)
+        * [Grid Support Detection](#grid-support-detection)
+        * [Javascript Detection](#javascript-detection)
+        * [Javascript querySelector detection](#javascript-queryselector-detection)
+    * [Feedback verbeteringen](#feedback-verbeteringen)
 * [To Do List](#to-do-list)
 
 ## Oba App
@@ -73,7 +78,7 @@ localhost:5000
 ```
 
 ### App Wireflow
-![alt text](./images/Wireflow.png)
+![wireflow](./images/Wireflow.png)
 
 
 
@@ -171,7 +176,24 @@ document.getElementsByTagName('form').action = '/javascriptYES'
 ```
 
 ### Feedback Verbeteringen
+#### Contrast net fout
+Contrast van de witte tekst op lichtblauwe achtergrond was slecht waardoor het niet heel leesbaar was. Ik heb daarvoor een text shadow toegepast zodat de tekst wast meer naar voren springt en dusdanig leesbaarder is geworden.
+![contrast](./images/contrast.png)
+#### Labels Outline
+Geen outline rondom de labels, dus als een gebruiker met tab door de website wilt navigeren is er geen duidelijke indicatie waar hij/zij is op dat moment. Ik heb dus een outline toegepast in de css.
+```css
+input:focus + label{
+    outline: rgba(0,0,0,.2) dotted 1px;
+}
+```
+![contrast](./images/outline.png)
 
+#### Geen alt tekst nodig
+Alt tekst was niet meer nodig bij de afbeeldingen omdat het beschrijving van de afbeelding onder staat. Daarom is de alt tekst overbodig.
+```html
+<img src="img/Beleg/Ham.png" alt="">
+<p>Ham</p>
+```
 
 ### To Do List
 - [x] Contrast net fout

@@ -104,7 +104,7 @@ label{
     cursor: pointer;
 }
 input:focus + label{
-    border: rgba(0,0,0,.2) solid 1px;
+    outline: rgba(0,0,0,.2) dotted 1px;
 }
 /* Globals Zonder Javascript Styling
 ------------------ */
