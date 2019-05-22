@@ -145,17 +145,20 @@ main.zonderJS{
 
 /* Homepage Styling 
 --------------------*/
-#FullTosti{
-    animation: upDownAnim 3s infinite ease-out;
-}
 .tostiShadow{
     background: rgba(0,0,0,.5);
     width: 150px;
     height: 20px;
     border-radius: 50%;
-    animation: shadow 3s infinite ease-out;
 }
-
+@supports (animation: infinite){
+    #FullTosti{
+        animation: upDownAnim 3s infinite ease-out;
+    }
+    .tostiShadow{
+        animation: shadow 3s infinite ease-out;
+    }
+}
 /* Svg Styling Homepage
 --------------------*/
 svg{
@@ -190,16 +193,31 @@ svg > * {
 /* Stacking Elements with Display grid
 ------------------- */
 /* Parent */
-.soort,
-.beleg{
-    display: grid;
-    grid-template-columns: 1fr;
+@supports (display: grid){
+    .soort,
+    .beleg{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /* Childs */
+    #keuzes .soort > .optie,
+    .beleg-categorie-opties{
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
 }
-/* Childs */
-#keuzes .soort > .optie,
-.beleg-categorie-opties{
-    grid-row-start: 1;
-    grid-column-start: 1;
+@supports not (display: grid){
+    .soort,
+    .beleg{
+        position: relative;
+    }
+    /* Childs */
+    #keuzes .soort > .optie,
+    .beleg-categorie-opties{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
 
