@@ -166,7 +166,9 @@ if(document.querySelector){
     }
 }else{
     // Oldest function
-    document.getElementsByTagName('form').action = '/javascriptYES'
+    const form = document.getElementsByTagName('form')
+    // Er is toch maar 1 form beschikbaar hier
+    form[0].action = '/javascriptYES'
 }
 ``` 
 #### Javascript querySelector detection
