@@ -122,6 +122,36 @@ Mijn website werkt prim zonder localstorage. Het enige wat niet meer snel word g
     * Niet/ of cookies gebruiken
 
 ### Feature detection 
+#### Grid support detection
+Eerst word er gekeken of de browser `display:grid` support als dat niet het geval is word er `position: absolute` gebruikt
+```css
+@supports (display: grid){
+    .soort,
+    .beleg{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /* Childs */
+    #keuzes .soort > .optie,
+    .beleg-categorie-opties{
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+}
+@supports not (display: grid){
+    .soort,
+    .beleg{
+        position: relative;
+    }
+    /* Childs */
+    #keuzes .soort > .optie,
+    .beleg-categorie-opties{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+```
 #### Javascript detection
 Gebruiker word naar een versie van de website geleid aan de hand van of javascript aanwezig is in de browser
 ```js
